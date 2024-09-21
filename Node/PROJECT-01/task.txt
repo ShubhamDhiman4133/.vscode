@@ -1,0 +1,13 @@
+REST API - JSON
+
+GET/users --- Gives all user present
+GET/api/users --- Gives all user present
+
+GET/api/users/1  --- Give the details of user 1
+GET/api/users/2  --- Give the details of user 2
+
+POST/api/users  --- Creates new user 
+
+PATCH/api/users/1  --- Edit the details of user 1
+
+DELETE/api/users/1  --- Delete the details of user 1

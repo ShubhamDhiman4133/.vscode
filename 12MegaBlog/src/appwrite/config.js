@@ -19,7 +19,7 @@ export class Service{
             return await this.databases.createDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
-                slug,
+                slug, 
                 {
                     title,
                     content,
@@ -29,10 +29,10 @@ export class Service{
                 }
             )
         } catch (error) {
+            console.error(error);
             throw error;
-        }
+          }
     }
-
     async updatePost(slug, {title, content, featuredImage, status}){
         try {
             return await this.databases.updateDocument(
@@ -48,7 +48,7 @@ export class Service{
                 }
             )
         } catch (error) {
-           throw error;
+            console.log("AppwriteService  :: updatePost :: error", error);
         }
     }
 
@@ -62,8 +62,8 @@ export class Service{
             )
             return true
         } catch (error) {
-            throw error;
-            
+            console.log("AppwriteService  :: deletePost :: error", error);
+            return false
         }
     }
 
@@ -76,8 +76,8 @@ export class Service{
             
             )
         } catch (error) {
-            throw error;
-            
+            console.log("AppwriteService  :: getPost :: error", error);
+            return false
         }
     }
 
@@ -91,8 +91,8 @@ export class Service{
 
             )
         } catch (error) {
-            throw error;
-            
+            console.log("AppwriteService  :: getPosts :: error", error);
+            return false
         }
     }
 
@@ -106,8 +106,8 @@ export class Service{
                 file
             )
         } catch (error) {
-            throw error;
-            
+            console.log("AppwriteService  :: uploadFile :: error", error);
+            return false
         }
     }
 
@@ -119,8 +119,8 @@ export class Service{
             )
             return true
         } catch (error) {
-            throw error;
-           
+            console.log("AppwriteService :: deleteFile :: error", error);
+            return false
         }
     }
 

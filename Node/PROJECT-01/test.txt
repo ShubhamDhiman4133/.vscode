@@ -1,0 +1,3 @@
+Schema - Define the Schema
+Schema- Model
+using MODEL do CRUD Operations.
